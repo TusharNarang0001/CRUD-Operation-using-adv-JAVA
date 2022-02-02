@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Management System</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h1>Employee Management System</h1>
+		<hr>
+		<h2>Save Employee</h2>
+		<form action="#" th:action="@{/saveEmployee}" th:object="${employee}"
+			method="post">
+			First Name: <input type="text" th:field="*{firstName}"
+				placeholder="Employee First Name" class="form-control mb-4 col-4"><br>
+			Last Name: <input type="text" th:field="*{lastName}"
+				placeholder="Employee Last Name" class="form-control mb-4 col-4"><br>
+			Email ID: <input type="email" th:field="*{emailID}"
+				placeholder="Employee Email ID" class="form-control mb-4 col-4"><br>
+			Salary: <input type="text" th:field="*{sal}"
+				placeholder="Employee Salary" class="form-control mb-4 col-4"><br>
+			<button type="submit" class="btn btn-info col-2">Save
+				Employee</button>
+
+		</form>
+		<hr>
+		<a th:href="@{/}">Back to Employee List </a>
+	</div>
+</body>
+</html>
